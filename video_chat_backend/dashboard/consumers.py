@@ -41,7 +41,10 @@ class ChatConsumer(WebsocketConsumer):
                 group = ChatGroup.objects.get(name=room_name)
             except:
                 pass
-            ChatMessage.objects.create(message=message, message_by=message_by, group=group)
+            try:
+                ChatMessage.objects.create(message=message, message_by=message_by, group=group)
+            except:
+                pass
             async_to_sync(self.channel_layer.group_send)(
                 self.room_group_name, 
                 {
