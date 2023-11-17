@@ -1,0 +1,16 @@
+.main_font {
+    margin: 200px 0;
+    color: rgb(88, 88, 88);
+    font-family: "Lucida Console", "Courier New", monospace;
+    animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

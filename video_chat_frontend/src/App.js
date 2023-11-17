@@ -7,6 +7,7 @@ import { AuthProvider } from './context/AuthContext';
 import AuthorPrivateRoute from './utils/AuthorPrivateRoute';
 import DashboardPage from './pages/DashboardPage';
 import ChatDashboardPage from './pages/ChatDashboardPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
               <Route element={<ChatDashboardPage/>} path='chat_dashboard/'/>
             </Route>
             {/* end */}
-          <Route element={<SignupPage />} path='/signup' />
+            <Route element={<SignupPage />} path='/signup' />
             <Route element={<LoginPage />} path='/login' />
+            <Route element={<NotFoundPage />} path='*' /> 
         </Routes>
         </AuthProvider>
       </Router>
